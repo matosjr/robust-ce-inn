@@ -1,0 +1,31 @@
+[tool.pdm]
+
+[project]
+name = "roar"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "=João Batista Pereira Matos Júnior", email = "=5480371+matosjr@users.noreply.github.com"},
+]
+
+requires-python = ">=3.7,<=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+    "lime>=0.2.0.1",
+    "choix>=0.3.5",
+]
+[project.optional-dependencies]
+torch = [
+    "tensorflow>=2.11.0",
+    "numpy>=1.21.1",
+    "scipy>=1.6.1",
+    "scikit-learn>=1.0.2",
+]
+common = [
+    "tqdm>=4.64.1",
+]
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"

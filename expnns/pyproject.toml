@@ -5,31 +5,39 @@ version = {source = "scm"}
 package-dir = "src"
 editable-backend = "editables"
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "-e file:///${PROJECT_ROOT}/../roar#egg=roar",
+]
+
 [project]
-name = "roar"
+name = "expnns"
 # version = "0.1.0"
 dynamic = ["version"]
 description = ""
 authors = [
     {name = "=João Batista Pereira Matos Júnior", email = "=5480371+matosjr@users.noreply.github.com"},
 ]
-
+dependencies = [
+    "gurobipy>=10.0.1",
+    "alibi>=0.9.0",
+]
 requires-python = ">=3.7,<=3.11"
 readme = "README.md"
 license = {text = "MIT"}
-dependencies = [
-    "lime>=0.2.0.1",
-    "choix>=0.3.5",
-]
 [project.optional-dependencies]
-torch = [
+common-ds = [
+    "tqdm>=4.64.1",
+    "pandas>=1.1.5",
+    "matplotlib>=3.5.3",
+    "seaborn>=0.12.2",
+]
+common-ml = [
+    "torch>=1.13.1",
     "tensorflow>=2.11.0",
     "numpy>=1.21.1",
     "scipy>=1.6.1",
     "scikit-learn>=1.0.2",
-]
-common = [
-    "tqdm>=4.64.1",
 ]
 
 [build-system]
